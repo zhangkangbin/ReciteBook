@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".ui.InputSubjectActivity">
+
+    <EditText
+        android:id="@+id/subjectTvSubject"
+        android:layout_width="match_parent"
+        android:hint="plase input subject"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:autofillHints="subject"
+        android:inputType="text"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:layout_marginTop="8dp"
+        android:id="@+id/subjectTvAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="150dp"
+        android:hint="plase input  answer"
+        android:autofillHints="subject"
+        android:inputType="text"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:layout_marginTop="8dp"
+        android:id="@+id/subjectTvBookId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="book id"
+        android:autofillHints="book id"
+        android:inputType="text"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:text="Submit Data"
+        android:id="@+id/subjectBtnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

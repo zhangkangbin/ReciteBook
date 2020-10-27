@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.AnswerSubjectActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <EditText
+                android:id="@+id/subjectTvSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="subject"
+                android:hint="plase input subject"
+                android:inputType="text"
+                android:minHeight="50dp"
+                tools:ignore="LabelFor" />
+
+            <EditText
+                android:id="@+id/subjectTvAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:autofillHints="subject"
+                android:hint="plase input  answer"
+                android:inputType="text"
+                android:minHeight="150dp"
+                tools:ignore="LabelFor" />
+
+            <EditText
+                android:id="@+id/subjectTvBookId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:autofillHints="book id"
+                android:hint="book id"
+                android:inputType="text"
+                tools:ignore="LabelFor" />
+
+            <Button
+                android:id="@+id/subjectBtnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Data" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center"
+
+            android:padding="15dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorRed"
+            android:text="Forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorBlue"
+            android:text="Collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorGreen"
+            android:text="Remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
