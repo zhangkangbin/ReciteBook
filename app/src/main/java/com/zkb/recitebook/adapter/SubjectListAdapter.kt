@@ -12,9 +12,17 @@ import com.zkb.recitebook.ui.AnswerSubjectActivity
 class SubjectListAdapter(context:Context,data: MutableList<SubjectBean>?) :
     BaseQuickAdapter<SubjectBean, BaseViewHolder>(R.layout.subject_item_list, data) {
     override fun convert(holder: BaseViewHolder, item: SubjectBean) {
+       val collectView=holder.getView<View>(R.id.collectView);
+        if(item.collect==0){
+            collectView.visibility=View.GONE
+        }else{
+            collectView.visibility=View.VISIBLE
+        }
 
         holder.setText(R.id.subject,item.subject)
         holder.setText(R.id.answer,item.answer)
+        holder.setText(R.id.forgetCount,"forget:"+item.forget)
+        holder.setText(R.id.rememberCount,"remember:"+item.remember)
 
         holder.getView<View>(R.id.cardViewSubject).setOnClickListener {
 

@@ -17,12 +17,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
+        <TextView
+            android:id="@+id/collectView"
+            android:padding="1dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp"
+            android:background="@color/colorRed"
+            android:text="collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         <LinearLayout
             android:padding="@dimen/dp_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <TextView
                 android:id="@+id/subject"
@@ -45,6 +54,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_10" />
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="forget:1"
+                    android:id="@+id/forgetCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:text="remember:2"
+                    android:id="@+id/rememberCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>
