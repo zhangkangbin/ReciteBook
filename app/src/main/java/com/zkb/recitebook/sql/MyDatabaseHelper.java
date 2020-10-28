@@ -168,6 +168,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 String answer = cursor.getString(cursor.getColumnIndex("answer"));
                 int remember = cursor.getInt(cursor.getColumnIndex("remember"));
                 int forget = cursor.getInt(cursor.getColumnIndex("forget"));
+                int collect = cursor.getInt(cursor.getColumnIndex("collect"));
 
                 SubjectBean info = new SubjectBean();
                 info.setId(id);
@@ -180,6 +181,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 info.setAnswer(answer);
                 info.setRemember(remember);
                 info.setForget(forget);
+                info.setCollect(collect);
                 data.add(info);
 
             } while (cursor.moveToNext());
@@ -296,6 +298,18 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             //db.update(table, null, "id=?", args)
 
             db.execSQL("update "+table+" set forget="+forget+" where id = "+id);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+    public synchronized boolean updateCollect(int id,int type) {
+        try {
+            SQLiteDatabase db = getReadableDatabase();
+
+            db.execSQL("update "+table+" set collect="+type+" where id = "+id);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

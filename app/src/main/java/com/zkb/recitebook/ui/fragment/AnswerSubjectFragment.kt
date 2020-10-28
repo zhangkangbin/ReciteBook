@@ -1,12 +1,13 @@
 package com.zkb.recitebook.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.Fragment
 import com.zkb.recitebook.R
 import com.zkb.recitebook.bean.SubjectBean
 import com.zkb.recitebook.sql.MyDatabaseHelper
@@ -94,8 +95,32 @@ class AnswerSubjectFragment : Fragment() {
         }
 
 
+        val testTvCollect=mView.findViewById<TextView>(R.id.testTvCollect)
+        if(info.collect==0){
+            setCompoundDrawableLeft(R.drawable.collect_un_ic,testTvCollect)
+        }else{
+            setCompoundDrawableLeft(R.drawable.collect_ready_ic,testTvCollect)
+        }
+        testTvCollect.setOnClickListener {
+
+            if(info.collect==0){
+                info.collect=1
+                setCompoundDrawableLeft(R.drawable.collect_ready_ic,testTvCollect)
+            }else{
+                info.collect=0
+                setCompoundDrawableLeft(R.drawable.collect_un_ic,testTvCollect)
+            }
+
+           MyDatabaseHelper.get(context).updateCollect(info.id,info.collect);
+        }
+
     }
 
+    private fun setCompoundDrawableLeft(res:Int, textView: TextView){
+        val drawableLast = ResourcesCompat.getDrawable(resources,res,context?.theme)
+        drawableLast?.setBounds(0, 0, drawableLast.minimumWidth, drawableLast.minimumHeight)
+        textView.setCompoundDrawables(drawableLast, null, null, null)
+    }
     companion object {
 
         @JvmStatic
