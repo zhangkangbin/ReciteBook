@@ -8,20 +8,40 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:text="导入数据"
-        android:id="@+id/insertData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <com.scwang.smart.refresh.layout.SmartRefreshLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
-    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mainViewPager"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0px"/>
+
+    <RadioGroup
+        android:id="@+id/indexRg"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/indexRbSubject"
+            android:padding="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="subject"
+            android:background="@color/colorBlue"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/indexRbSetting"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorGreen"
+            android:padding="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="data setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
 
 </LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.SettingFragment">
+
+
+    <TextView
+        android:id="@+id/settingTvAddData"
+        android:padding="15dp"
+        android:text="add data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLineGray"
+        />
+    <TextView
+        android:id="@+id/settingTvTest"
+        android:padding="15dp"
+        android:text="start test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLineGray"
+        />
+</LinearLayout>
