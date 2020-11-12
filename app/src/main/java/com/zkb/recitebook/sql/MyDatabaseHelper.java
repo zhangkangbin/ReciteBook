@@ -108,10 +108,22 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
         return getAllData("", 0);
     }
+    public synchronized List<SubjectBean> getCollect() {
+        SQLiteDatabase db = getReadableDatabase();
+        //查询sql数据
+        Cursor cursor;
+        cursor = db.query(table, null, "collect = ?", new String[]{"1"},
+                null, null, null, null);
+
+        List<SubjectBean> list = setData(cursor);
+        if (list.isEmpty()) {
+            return new ArrayList<SubjectBean>();
+        }
+        return list;
+    }
 
     public synchronized SubjectBean getById(String id) {
     //    Log.d("mytest", "getAllData is " + queryData + "page" + page);
-
         SQLiteDatabase db = getReadableDatabase();
         //查询sql数据
         Cursor cursor;

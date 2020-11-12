@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.zkb.recitebook.R
+import com.zkb.recitebook.base.BaseActivity
 import com.zkb.recitebook.bean.SubjectBean
 import com.zkb.recitebook.sql.MyDatabaseHelper
 import java.lang.Exception
@@ -16,10 +17,11 @@ import java.lang.Exception
   * @author:zhangkb
   * Date:2020/10/23 16:24
  */
-class InputSubjectActivity : AppCompatActivity() {
+class InputSubjectActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_subject)
+        setTitle("添加数据")
         initView()
     }
 
@@ -47,7 +49,5 @@ class InputSubjectActivity : AppCompatActivity() {
         }
     }
 
-    fun showToast(msg:String){
-        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
-    }
+
 }

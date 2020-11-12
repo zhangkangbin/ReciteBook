@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import com.zkb.recitebook.R
+import com.zkb.recitebook.ui.CollectDataActivity
 import com.zkb.recitebook.ui.InputSubjectActivity
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,6 +37,12 @@ class SettingFragment : Fragment() {
         view.findViewById<View>(R.id.settingTvAddData).setOnClickListener {
          startActivity(Intent(activity, InputSubjectActivity::class.java))
      }
+        view.findViewById<View>(R.id.settingTvMyCollect).setOnClickListener {
+            startActivity(Intent(activity, CollectDataActivity::class.java))
+        }
+
+
+
     }
 
 }
